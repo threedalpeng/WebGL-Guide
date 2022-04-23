@@ -1,0 +1,11 @@
+{
+  "folders": [
+	{
+		"path": "./webgl-guide-backend"
+	},
+	{
+		"path": "./webgl-guide-frontend"
+	}
+],
+  "settings": {}
+}
