@@ -10,7 +10,8 @@
   "dependencies": {
     "markdown-it": "^12.3.2",
     "monaco-editor": "^0.33.0",
-    "vue": "^3.2.25"
+    "vue": "^3.2.25",
+    "vue-router": "4"
   },
   "devDependencies": {
     "@types/markdown-it": "^12.2.3",
