@@ -1,7 +1,7 @@
 ---
 name: Documentation
 about: 기록할 것들
-title: ''
+title: "[Doc]"
 labels: ''
 assignees: ''
 
