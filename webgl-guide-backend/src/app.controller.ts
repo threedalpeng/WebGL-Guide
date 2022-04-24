@@ -17,7 +17,6 @@ export class AppController {
 
   @Get('/lectures')
   getLectures() {
-    console.log('lectures');
     return this.appService.getLectureItems();
   }
 }

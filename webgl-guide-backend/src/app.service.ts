@@ -21,7 +21,6 @@ export class AppService {
         HttpStatus.NOT_FOUND,
       );
     }
-    console.log(lecture);
     return lecture;
   }
 
