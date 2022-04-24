@@ -3,7 +3,7 @@ name: Epic
 about: 이슈 그룹
 title: "[EPIC]"
 labels: ''
-assignees: ''
+assignees: threedalpeng, kangrnin
 
 ---
 
