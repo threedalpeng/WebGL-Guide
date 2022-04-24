@@ -5,7 +5,12 @@
     <div>
       <h1>WebGL Study</h1>
     </div>
-    <router-view></router-view>
+    <Suspense>
+      <template #default>
+        <router-view></router-view>
+      </template>
+      <template #fallback> loading... </template>
+    </Suspense>
   </div>
 </template>
 

@@ -1,6 +1,7 @@
 import HomePage from "../page/home/HomePage.vue";
-import LecturePage from "../page/lecture/LecturePage.vue";
-import { createRouter, createWebHashHistory } from "vue-router";
+import { createRouter, createWebHistory } from "vue-router";
+
+const LecturePage = () => import("../page/lecture/LecturePage.vue");
 
 const routes = [
   { path: "/", component: HomePage },
@@ -8,7 +9,7 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
 });
 

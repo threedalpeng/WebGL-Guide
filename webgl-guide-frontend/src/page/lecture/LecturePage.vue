@@ -1,20 +1,27 @@
 <script setup lang="ts">
+import { reactive } from "vue";
 import { useRoute } from "vue-router";
 import MarkdownView from "../../components/view/MarkdownView.vue";
-const sampleData = {
-  title: "hi",
-  markdown: `# hi
-  ## Welcome Friends`,
-};
+
+interface LectureInfo {
+  id: number;
+  title: string;
+  content: string;
+  description: string;
+}
+
 const route = useRoute();
 const id = route.params.id;
+
+const lecture: LectureInfo = await (
+  await fetch(`${import.meta.env.VITE_API_URL}/lecture/${id}`)
+).json();
 </script>
 
 <template>
   <div>
-    {{ id }}
     <div class="lecture-content-wrapper p-8">
-      <MarkdownView :title="sampleData.title" :markdown="sampleData.markdown" />
+      <MarkdownView :title="lecture.title" :content="lecture.content" />
     </div>
   </div>
 </template>

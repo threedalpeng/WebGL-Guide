@@ -2,10 +2,11 @@
 import MarkdownIt from "markdown-it";
 
 const props = defineProps<{
-  markdown: string;
+  title: string;
+  content: string;
 }>();
 const md = new MarkdownIt({ breaks: true });
-const result = md.render(props.markdown);
+const result = md.render(props.content);
 </script>
 
 <template>
