@@ -31,6 +31,9 @@ export class AppService {
         title: true,
         description: true,
       },
+      orderBy: {
+        id: 'asc',
+      },
     });
   }
 }
