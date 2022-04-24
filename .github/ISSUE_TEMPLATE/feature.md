@@ -2,7 +2,7 @@
 name: Feature
 about: 구현해야 할 기능
 title: "[Feature]"
-labels: ''
+labels: Feature
 assignees: ''
 
 ---

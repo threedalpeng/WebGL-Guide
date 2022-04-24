@@ -2,7 +2,7 @@
 name: Documentation
 about: 기록할 것들
 title: "[Doc]"
-labels: ''
+labels: documentation
 assignees: ''
 
 ---
