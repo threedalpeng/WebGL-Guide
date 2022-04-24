@@ -1,4 +1,4 @@
-import { Controller, Get, Param } from '@nestjs/common';
+import { Controller, Get, Param, ParseIntPipe } from '@nestjs/common';
 import { AppService } from './app.service';
 
 @Controller()
@@ -11,12 +11,13 @@ export class AppController {
   }
 
   @Get('/lecture/:id')
-  getLecture(@Param('id') id: number) {
-    return id;
+  getLecture(@Param('id', ParseIntPipe) id: number) {
+    return this.appService.getLecture(id);
   }
 
   @Get('/lectures')
   getLectures() {
-    return [];
+    console.log('lectures');
+    return this.appService.getLectureItems();
   }
 }
