@@ -1,42 +1,16 @@
 <script setup lang="ts">
 import LectureGridItem, { LectureItemProp } from "./LectureGridItem.vue";
 
-const data: LectureItemProp[] = [
-  {
-    id: 1,
-    title: "Something",
-    description: "Something",
-  },
-  {
-    id: 2,
-    title: "Something",
-    description: "Something",
-  },
-  {
-    id: 3,
-    title: "Something",
-    description: "Something",
-  },
-  {
-    id: 4,
-    title: "Something",
-    description: "Something",
-  },
-  {
-    id: 5,
-    title: "Something",
-    description: "Something",
-  },
-];
+const props = defineProps<{ items: LectureItemProp[] }>();
 </script>
 
 <template>
   <div class="grid gap-x-12 gap-y-14 grid-cols-1 md:grid-cols-2 xl:grid-cols-3">
     <LectureGridItem
-      v-for="datum in data"
-      :id="datum.id"
-      :title="datum.title"
-      :description="datum.description"
+      v-for="item in props.items"
+      :id="item.id"
+      :title="item.title"
+      :description="item.description"
     />
   </div>
 </template>
