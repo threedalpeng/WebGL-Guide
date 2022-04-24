@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
 import { PrismaService } from './prisma/prisma.service';
 
 @Injectable()
@@ -10,11 +10,19 @@ export class AppService {
   }
 
   async getLecture(id: number) {
-    return await this.prisma.lecture.findFirst({
+    const lecture = await this.prisma.lecture.findFirst({
       where: {
         id: id,
       },
     });
+    if (lecture === null) {
+      throw new HttpException(
+        `No lecture of id = ${id} exists.`,
+        HttpStatus.NOT_FOUND,
+      );
+    }
+    console.log(lecture);
+    return lecture;
   }
 
   async getLectureItems() {
