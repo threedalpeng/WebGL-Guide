@@ -1,10 +1,10 @@
 ---
 name: Epic
 about: 이슈 그룹
-title: "[EPIC]"
+title: "[EPIC] <title>"
 labels: Epic
 assignees: threedalpeng, kangrnin
-
+projects: WebGL-Guide
 ---
 
 ### 상위 이슈
