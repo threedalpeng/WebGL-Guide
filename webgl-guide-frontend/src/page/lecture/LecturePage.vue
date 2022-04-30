@@ -19,18 +19,28 @@ const lecture: LectureInfo = await (
 </script>
 
 <template>
-  <div>
-    <div class="lecture-content-wrapper p-8">
-      <MarkdownView :title="lecture.title" :content="lecture.content" />
+  <div class="m-0 w-100vw h-100vh select-none">
+    <div class="background-demo bg-black">
+      <img
+        class="w-100% h-100%"
+        src="/src/assets/week2-a2.png"
+        style="object-fit: contain; object-position: 50% 50%"
+      />
+    </div>
     </div>
   </div>
 </template>
 
 <style scoped>
-.lecture-content-wrapper {
-  background-color: white;
-  border-radius: 39px;
-  box-shadow: 19px 19px 40px #8eafb0, -19px -19px 40px #daffff;
-  width: 80vw;
+.background-demo {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  border: none;
+  pointer-events: none;
+}
 }
 </style>
