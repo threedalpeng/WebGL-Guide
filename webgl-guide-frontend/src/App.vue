@@ -1,10 +1,10 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import Header from "./components/view/Header.vue"
+</script>
 
 <template>
   <div class="flex flex-col items-center gap-8">
-    <div>
-      <h1>WebGL Study</h1>
-    </div>
+    <Header v-if="$route.name != 'lecture'"></Header>
     <Suspense>
       <template #default>
         <router-view></router-view>
