@@ -1,0 +1,10 @@
+{
+  "lectures": [
+    {
+      "id": 1,
+      "title": "WebGL 기초",
+      "description": "WebGL 어플리케이션의 전반적인 구조와 기초적인 컴퓨터 그래픽스 이론을 알아봅시다.",
+      "content": ""
+    }
+  ]
+}
