@@ -7,15 +7,22 @@ const fs = require("fs")
 // Set default middlewares (logger, static, cors and no-cache)
 server.use(middlewares)
 
-// Add custom routes before JSON Server router
-server.get("/lecture/:id", (req, res) => {
-  const markdownPath = `${__dirname}/lectures/lec${req.params.id}.md`
-  if (fs.existsSync(markdownPath)) {
-    res.status(200).send(fs.readFileSync(markdownPath, "utf-8"))
+router.render = (req, res) => {
+  if (req.path.includes("/lectures/")) {
+    const markdownPath = `${__dirname}/lectures/lec${req.path.split("/")[2]}.md`
+    console.log(markdownPath)
+    if (fs.existsSync(markdownPath)) {
+      res.jsonp({
+        ...res.locals.data,
+        content: fs.readFileSync(markdownPath, "utf-8"),
+      })
+    } else {
+      res.status(404).send()
+    }
   } else {
-    res.status(404).send()
+    res.jsonp(res.locals.data)
   }
-})
+}
 
 // To handle POST, PUT and PATCH you need to use a body-parser
 // You can use the one used by JSON Server
