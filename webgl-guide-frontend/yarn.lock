@@ -183,6 +183,11 @@
   resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.30.12.tgz#0616577985fee9ef7f260510b0723e65702a5088"
   integrity sha512-uxtLVT59ryp/h4I5QgcN4il+5MOEEfzf0M0FxzxYAiizO3cBLNCmCfPKo0Sp5VWCgWDrBFtyEEVP7G6lDOin/w==
 
+"@unocss/core@0.31.17":
+  version "0.31.17"
+  resolved "https://registry.yarnpkg.com/@unocss/core/-/core-0.31.17.tgz#e4f74f0495b8c395f6b0090dbcb371d3ce5d40c7"
+  integrity sha512-DJ3Uk2ePVXvV1qQmgoLK44aqB6f0s+naOEvouI97nzVXDZgxDQPBxIPB/L4vvE4U+gQxEiHwwE3gJ75iPqVzXw==
+
 "@unocss/inspector@0.30.12":
   version "0.30.12"
   resolved "https://registry.yarnpkg.com/@unocss/inspector/-/inspector-0.30.12.tgz#bc1ef16f1b6980f3a49f3832139899e17fef79b8"
@@ -212,6 +217,13 @@
   integrity sha512-4R9Pd0ZInq5HbW1a/H74AVoiCiTiaff79zuCUz8T/R/yOeoSfZuDjUgPFJrlRUyWLTIKxwi2DxGEfkN3AfQIGg==
   dependencies:
     "@unocss/core" "0.30.12"
+
+"@unocss/preset-mini@^0.31.13":
+  version "0.31.17"
+  resolved "https://registry.yarnpkg.com/@unocss/preset-mini/-/preset-mini-0.31.17.tgz#847168f1abe55d44f3e9aa6128ad3cb516ba471b"
+  integrity sha512-gVgMTOKLt3O1ym348QIBmR5sS9W0Ozkk5xelhH6e0VXcpg0dXDPDrl4hFErMy4x6IB86yyJG6Dz5JhcwQB13Ig==
+  dependencies:
+    "@unocss/core" "0.31.17"
 
 "@unocss/preset-typography@0.30.12":
   version "0.30.12"
@@ -449,6 +461,36 @@
   version "3.2.31"
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.2.31.tgz#c90de7126d833dcd3a4c7534d534be2fb41faa4e"
   integrity sha512-ymN2pj6zEjiKJZbrf98UM2pfDd6F2H7ksKw7NDt/ZZ1fh5Ei39X5tABugtT03ZRlWd9imccoK0hE8hpjpU7irQ==
+
+"@vueuse/components@^8.3.1":
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/@vueuse/components/-/components-8.3.1.tgz#0738d5ba487c96a815aa55f7bc96b8265b6a7ab5"
+  integrity sha512-cE5NzDpH+qKAQpV8TNhibY3+tzOo0Q3ratL2yId5q8UKFTa6YBMsNTqEa3lHfx+M3pSKZH+KOHP6SRUeV+unYw==
+  dependencies:
+    "@vueuse/core" "8.3.1"
+    "@vueuse/shared" "8.3.1"
+    vue-demi "*"
+
+"@vueuse/core@8.3.1", "@vueuse/core@^8.3.1":
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/@vueuse/core/-/core-8.3.1.tgz#7f2c5977cc0690a803f44c3f5c291536ad7880d1"
+  integrity sha512-WiXUgVyPG9elGx3G8UV8g+zqbEJ2hYacrPICogAxDdW6hnxxcUFdF7FtvDroJ/DxWmo2pg8XNNz07ybfnZyJbw==
+  dependencies:
+    "@vueuse/metadata" "8.3.1"
+    "@vueuse/shared" "8.3.1"
+    vue-demi "*"
+
+"@vueuse/metadata@8.3.1":
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/@vueuse/metadata/-/metadata-8.3.1.tgz#acc0ff9ad686c68dfc7b4869639c43e71ae2682b"
+  integrity sha512-1aZaFL44HzXXkfN6Q7KMDOXBFKTHDClHlOJBxtN8rTBXIIScoGOrJCpxWiQ4kuVg95MzG/pHrd3P4wd8poL9XQ==
+
+"@vueuse/shared@8.3.1":
+  version "8.3.1"
+  resolved "https://registry.yarnpkg.com/@vueuse/shared/-/shared-8.3.1.tgz#a941ef6a0eaf483ecb0e88a062163d506c22cc4b"
+  integrity sha512-7HKLCcxp4dtONq6QSSoavblo9riYgqzw7jhqiC0/VUYMXKzqj1G/GznOzTmY8Wi8uKKT197JqjKQ1DKt2j/0+A==
+  dependencies:
+    vue-demi "*"
 
 acorn-jsx@^5.3.1:
   version "5.3.2"
@@ -1897,6 +1939,13 @@ unconfig@^0.3.2:
     defu "^5.0.1"
     jiti "^1.13.0"
 
+unocss-preset-scrollbar@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/unocss-preset-scrollbar/-/unocss-preset-scrollbar-0.1.0.tgz#b9e3a65381e92e56546ce9ef77096ccf223c1e1a"
+  integrity sha512-fR5+CsdIwI8g1xIMKBuLFSZ0LiElTznq/Ylub6Bf1QKWq7UyQruX0vBW70QN/R0U3RLc5Cexe5tXqREcocdweA==
+  dependencies:
+    "@unocss/preset-mini" "^0.31.13"
+
 unocss@^0.30.12:
   version "0.30.12"
   resolved "https://registry.yarnpkg.com/unocss/-/unocss-0.30.12.tgz#957f06996657b5b6cde2a56c7fc52299fa3867c2"
@@ -2078,6 +2127,11 @@ vscode-vue-languageservice@0.29.8:
     vscode-languageserver-textdocument "^1.0.1"
     vscode-pug-languageservice "0.29.8"
     vscode-typescript-languageservice "0.29.8"
+
+vue-demi@*:
+  version "0.12.5"
+  resolved "https://registry.yarnpkg.com/vue-demi/-/vue-demi-0.12.5.tgz#8eeed566a7d86eb090209a11723f887d28aeb2d1"
+  integrity sha512-BREuTgTYlUr0zw0EZn3hnhC3I6gPWv+Kwh4MCih6QcAeaTlaIX0DwOVN0wHej7hSvDPecz4jygy/idsgKfW58Q==
 
 vue-eslint-parser@^8.0.1:
   version "8.3.0"

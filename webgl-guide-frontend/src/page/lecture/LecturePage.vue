@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { reactive } from "vue";
 import { useRoute } from "vue-router";
-import MarkdownView from "../../components/view/MarkdownView.vue";
+import LectureBackground from "./LectureBackground.vue";
+import LectureSidebar from "./LectureSidebar.vue";
 
 interface LectureInfo {
   id: number;
@@ -20,27 +20,23 @@ const lecture: LectureInfo = await (
 
 <template>
   <div class="m-0 w-100vw h-100vh select-none">
-    <div class="background-demo bg-black">
-      <img
-        class="w-100% h-100%"
-        src="/src/assets/week2-a2.png"
-        style="object-fit: contain; object-position: 50% 50%"
-      />
-    </div>
-    </div>
+    <LectureBackground></LectureBackground>
+    <LectureSidebar></LectureSidebar>
+    <!--div class="description-card">
+      <h1>{{ lecture.title }}</h1>
+      <p>{{ lecture.description }}</p>
+    </div-->
   </div>
 </template>
 
 <style scoped>
-.background-demo {
+.description-card {
   position: fixed;
-  width: 100vw;
-  height: 100vh;
-  left: 0;
-  top: 0;
-  z-index: -1;
-  border: none;
-  pointer-events: none;
-}
+  width: 300px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+
+  color: white;
 }
 </style>

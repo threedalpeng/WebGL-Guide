@@ -4,11 +4,14 @@
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
+    "dev:pm2": "pm2 start yarn --interpreter bash --name 'webgl-guide-front' -- dev",
     "clean": "rm -rf node_modules/.vite",
     "build": "vue-tsc --noEmit && vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "@vueuse/components": "^8.3.1",
+    "@vueuse/core": "^8.3.1",
     "dotenv": "^16.0.0",
     "markdown-it": "^12.3.2",
     "monaco-editor": "^0.33.0",
@@ -24,6 +27,7 @@
     "eslint-plugin-vue": "^8.6.0",
     "typescript": "^4.5.4",
     "unocss": "^0.30.12",
+    "unocss-preset-scrollbar": "^0.1.0",
     "vite": "^2.9.0",
     "vue-tsc": "^0.29.8"
   }
