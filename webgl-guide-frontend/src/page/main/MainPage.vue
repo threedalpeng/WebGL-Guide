@@ -8,9 +8,7 @@ interface LectureInfo {
   description: string;
 }
 
-const lectures: LectureInfo[] = await (
-  await fetch(`${import.meta.env.VITE_API_URL}/lectures`)
-).json();
+const lectures: LectureInfo[] = await (await fetch(`/api/lectures`)).json();
 </script>
 
 <template>
