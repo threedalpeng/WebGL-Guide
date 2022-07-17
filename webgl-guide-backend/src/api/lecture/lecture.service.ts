@@ -1,8 +1,8 @@
 import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
-import { PrismaService } from './prisma/prisma.service';
+import { PrismaService } from 'src/prisma/prisma.service';
 
 @Injectable()
-export class AppService {
+export class LectureService {
   constructor(private prisma: PrismaService) {}
 
   getHello(): string {
