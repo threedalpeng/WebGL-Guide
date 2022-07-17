@@ -5,12 +5,12 @@ import { presetUno } from "unocss";
 import { presetScrollbar } from "unocss-preset-scrollbar";
 
 export default defineConfig(({ mode }) => {
-  process.env = { ...process.env, ...loadEnv(mode, process.cwd(), "") };
+  const env = loadEnv(mode, process.cwd(), "");
   return {
     plugins: [vue(), Unocss({ presets: [presetUno(), presetScrollbar()] })],
     server: {
-      host: process.env.SERVER_HOST,
-      port: Number(process.env.SERVER_PORT),
+      host: env.SERVER_HOST,
+      port: Number(env.SERVER_PORT),
       hmr: {
         clientPort: 443,
       },
