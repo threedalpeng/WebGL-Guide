@@ -1,7 +1,8 @@
 <script setup lang="ts">
+import { ref } from "vue";
 import { useRoute } from "vue-router";
-import LectureBackground from "./LectureBackground.vue";
-import LectureSidebar from "./LectureSidebar.vue";
+import LectureFront from "./LectureFront.vue";
+import LectureContent from "./LectureContent.vue";
 
 interface LectureInfo {
   id: number;
@@ -13,30 +14,35 @@ interface LectureInfo {
 const route = useRoute();
 const id = route.params.id;
 
-const lecture: LectureInfo = await (
-  await fetch(`${import.meta.env.VITE_API_URL}/lecture/${id}`)
-).json();
+const lecture: LectureInfo = await (await fetch(`/api/lecture/${id}`)).json();
+
+const scrollOffset = ref(0);
+const lectureContentRef = ref<HTMLDivElement>();
+
+const onWheel = (e: WheelEvent) => {
+  //e.preventDefault();
+  scrollOffset.value = Math.min(
+    1,
+    Math.max(0, scrollOffset.value - e.deltaY / 1000)
+  );
+  lectureContentRef.value!.style.setProperty(
+    "--scroll",
+    scrollOffset.value.toString()
+  );
+};
 </script>
 
 <template>
-  <div class="m-0 w-100vw h-100vh select-none">
-    <LectureBackground></LectureBackground>
-    <LectureSidebar></LectureSidebar>
-    <!--div class="description-card">
-      <h1>{{ lecture.title }}</h1>
-      <p>{{ lecture.description }}</p>
-    </div-->
+  <div
+    class="m-0 w-100vw h-100vh -mr-16px select-none overflow-x-hidden"
+    @wheel="onWheel"
+  >
+    <LectureFront
+      :title="lecture.title"
+      :description="lecture.description"
+    ></LectureFront>
+    <LectureContent ref="lectureContentRef"></LectureContent>
   </div>
 </template>
 
-<style scoped>
-.description-card {
-  position: fixed;
-  width: 300px;
-  right: 30px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  color: white;
-}
-</style>
+<style scoped></style>

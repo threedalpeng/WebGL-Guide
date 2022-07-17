@@ -11,6 +11,7 @@
 
 <style>
 body {
+  width: 100vw;
   margin: 0;
 }
 
