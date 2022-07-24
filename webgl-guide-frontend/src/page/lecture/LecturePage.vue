@@ -1,9 +1,11 @@
 <script setup lang="ts">
+import { vScroll } from "@vueuse/components";
+import { UseScrollReturn } from "@vueuse/core";
 import { useRouteParams } from "@vueuse/router";
 import { ref } from "vue";
-import { useRoute } from "vue-router";
-import LectureFront from "./LectureFront.vue";
+import { useLectureStore } from "../../store/LectureStore";
 import LectureContent from "./LectureContent.vue";
+import LectureFront from "./LectureFront.vue";
 
 interface LectureInfo {
   id: number;
@@ -18,30 +20,23 @@ const lecture: LectureInfo = await (
   await fetch(`/api/lecture/${lectureId.value}`)
 ).json();
 
-const scrollOffset = ref(0);
-const lectureContentRef = ref<HTMLDivElement>();
+const lectureStore = useLectureStore();
 
-const onWheel = (e: WheelEvent) => {
-  //e.preventDefault();
-  scrollOffset.value = Math.min(
-    1,
-    Math.max(0, scrollOffset.value - e.deltaY / 1000)
-  );
-  lectureContentRef.value!.style.setProperty(
-    "--scroll",
-    scrollOffset.value.toString()
-  );
+const lectureFrontMarginTop = ref(0);
+const getDataOnScroll = (state: UseScrollReturn) => {
+  lectureFrontMarginTop.value = state.y.value;
 };
 </script>
 
 <template>
   <div
     class="m-0 w-100vw h-100vh -mr-16px select-none overflow-x-hidden"
-    @wheel="onWheel"
+    v-scroll="getDataOnScroll"
   >
     <LectureFront
       :title="lecture.title"
       :description="lecture.description"
+      :style="{ top: `${lectureFrontMarginTop}px` }"
     ></LectureFront>
     <LectureContent v-if="!lectureStore.isDemoFocused"></LectureContent>
   </div>
