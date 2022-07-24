@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useRouteParams } from "@vueuse/router";
 import { ref } from "vue";
 import { useRoute } from "vue-router";
 import LectureFront from "./LectureFront.vue";
@@ -11,10 +12,11 @@ interface LectureInfo {
   description: string;
 }
 
-const route = useRoute();
-const id = route.params.id;
+const lectureId = useRouteParams("id");
 
-const lecture: LectureInfo = await (await fetch(`/api/lecture/${id}`)).json();
+const lecture: LectureInfo = await (
+  await fetch(`/api/lecture/${lectureId.value}`)
+).json();
 
 const scrollOffset = ref(0);
 const lectureContentRef = ref<HTMLDivElement>();
