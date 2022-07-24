@@ -10,13 +10,16 @@
 </template>
 
 <style>
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+
 body {
   width: 100vw;
   margin: 0;
 }
 
 #app {
-  font-family: "Noto Sans KR", Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Spoqa Han Sans Neo", "Noto Sans KR", Avenir, Helvetica, Arial,
+    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
