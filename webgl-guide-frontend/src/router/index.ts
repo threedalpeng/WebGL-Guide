@@ -1,5 +1,5 @@
-import MainPage from "../page/main/MainPage.vue";
 import { createRouter, createWebHistory } from "vue-router";
+import MainPage from "../page/main/MainPage.vue";
 
 const LecturePage = () => import("../page/lecture/LecturePage.vue");
 const DemoPage = () => import("../page/demo/DemoPage.vue");
