@@ -43,7 +43,7 @@ const onWheel = (e: WheelEvent) => {
       :title="lecture.title"
       :description="lecture.description"
     ></LectureFront>
-    <LectureContent ref="lectureContentRef"></LectureContent>
+    <LectureContent v-if="!lectureStore.isDemoFocused"></LectureContent>
   </div>
 </template>
 

@@ -47,7 +47,6 @@ const onSwipeEnd = (e: PointerEvent) => {
 watchDebounced(
   [seq, isSwiping],
   ([currentSeq, currentIsSwiping], [oldSeq, oldIsSwiping]) => {
-    console.log(currentIsSwiping);
     if (!currentIsSwiping) {
       seq.value = Math.round(currentSeq as number);
     }
@@ -82,7 +81,7 @@ const getGalleryItemStyle: (
       <img
         class="transform"
         :class="{ '-rotate-y-180': isSidebarOpen }"
-        style="transition: all 0.3 ease"
+        style="transition: all 0.4s ease"
         src="../../assets/icons/opener2.svg"
       />
     </div>
@@ -139,7 +138,7 @@ const getGalleryItemStyle: (
   align-items: center;
   justify-content: center;
 
-  touch-action: none;
+  /* touch-action: none; */
 }
 
 .lecture-sidebar-gallery-item {
