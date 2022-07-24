@@ -30,7 +30,7 @@ const getDataOnScroll = (state: UseScrollReturn) => {
 
 <template>
   <div
-    class="m-0 w-100vw h-100vh -mr-16px select-none overflow-x-hidden"
+    class="m-0 w-100vw h-100vh -mr-10px select-none overflow-y-auto overflow-x-hidden scrollbar scrollbar-rounded scrollbar-w-12px scrollbar-radius-2"
     v-scroll="getDataOnScroll"
   >
     <LectureFront
