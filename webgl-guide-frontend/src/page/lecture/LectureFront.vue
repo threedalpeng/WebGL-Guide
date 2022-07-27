@@ -19,7 +19,7 @@ watch(
 </script>
 
 <template>
-  <div style="position: relative; z-index: 1">
+  <div class="position-sticky z-1 top-0">
     <LectureBackground class="background"></LectureBackground>
     <LectureSidebar v-show="!lectureStore.isDemoFocused"></LectureSidebar>
     <div v-show="!lectureStore.isDemoFocused" class="description-card">

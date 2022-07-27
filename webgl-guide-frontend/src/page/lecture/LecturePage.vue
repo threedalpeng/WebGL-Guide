@@ -21,22 +21,15 @@ const lecture: LectureInfo = await (
 ).json();
 
 const lectureStore = useLectureStore();
-
-const lectureFrontMarginTop = ref(0);
-const getDataOnScroll = (state: UseScrollReturn) => {
-  lectureFrontMarginTop.value = state.y.value;
-};
 </script>
 
 <template>
   <div
     class="m-0 w-100vw h-100vh -mr-10px select-none overflow-y-auto overflow-x-hidden scrollbar scrollbar-rounded scrollbar-w-12px scrollbar-radius-2"
-    v-scroll="getDataOnScroll"
   >
     <LectureFront
       :title="lecture.title"
       :description="lecture.description"
-      :style="{ top: `${lectureFrontMarginTop}px` }"
     ></LectureFront>
     <LectureContent v-if="!lectureStore.isDemoFocused"></LectureContent>
   </div>
