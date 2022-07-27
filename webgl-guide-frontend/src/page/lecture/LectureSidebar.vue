@@ -138,7 +138,7 @@ const getGalleryItemStyle: (
   align-items: center;
   justify-content: center;
 
-  /* touch-action: none; */
+  touch-action: none;
 }
 
 .lecture-sidebar-gallery-item {
